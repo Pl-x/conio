@@ -2,7 +2,7 @@ import os
 import subprocess
 import numpy as np
 
-def ground():
+def plx():
     # Request user input for the flash drive path
     drive_path = input("Enter the path of the flash drive (e.g., /dev/sdX1): ")
 
@@ -44,4 +44,4 @@ def ground():
         print(f"{drive_path} labeled as 'pass'.")
 
 # Call the function
-ground()
+plx()
