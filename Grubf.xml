@@ -1,0 +1,68 @@
+<Script>
+    <Description>Automates reinstalling GRUB on EFI systems</Description>
+    
+    <Functions>
+        <Function name="run_command">
+            <Description>Executes a shell command and prints the output</Description>
+            <Parameters>
+                <Parameter name="command" type="string" />
+            </Parameters>
+            <TryBlock>
+                <Print>Running command: {command}</Print>
+                <SubprocessRun command="{command}" shell="true" check="true" />
+                <Print>Command succeeded: {command}</Print>
+            </TryBlock>
+            <ExceptBlock exception="CalledProcessError">
+                <Print>Command failed: {command}\nError: {e}</Print>
+            </ExceptBlock>
+        </Function>
+
+        <Function name="reinstall_grub">
+            <Description>Reinstalls GRUB on the specified partitions</Description>
+            <Parameters>
+                <Parameter name="root_partition" type="string" />
+                <Parameter name="efi_partition" type="string" />
+                <Parameter name="drive" type="string" />
+            </Parameters>
+            <Commands>
+                <Command>mount {root_partition} /mnt</Command>
+                <Command>mount --bind /dev /mnt/dev</Command>
+                <Command>mount --bind /proc /mnt/proc</Command>
+                <Command>mount --bind /sys /mnt/sys</Command>
+                <Command>mount {efi_partition} /mnt/boot</Command>
+                <Command>chroot /mnt</Command>
+                <Command>apt update && apt upgrade -y</Command>
+                <Command>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck {drive}</Command>
+                <Command>update-grub</Command>
+                <Command>exit</Command>
+                <Command>umount /mnt/dev && umount /mnt/proc && umount /mnt/sys && umount /mnt</Command>
+                <Command>reboot</Command>
+            </Commands>
+            <ForEachCommand>
+                <RunCommand>{command}</RunCommand>
+            </ForEachCommand>
+        </Function>
+    </Functions>
+
+    <Main>
+        <InputPrompt>
+            <Prompt>Enter the root partition (e.g., /dev/sdX#): </Prompt>
+            <Variable name="root_partition" />
+        </InputPrompt>
+        <InputPrompt>
+            <Prompt>Enter the EFI partition (e.g., /dev/sdX1): </Prompt>
+            <Variable name="efi_partition" />
+        </InputPrompt>
+        <InputPrompt>
+            <Prompt>Enter the drive (e.g., /dev/sdX): </Prompt>
+            <Variable name="drive" />
+        </InputPrompt>
+        <CallFunction name="reinstall_grub">
+            <Arguments>
+                <Argument>{root_partition}</Argument>
+                <Argument>{efi_partition}</Argument>
+                <Argument>{drive}</Argument>
+            </Arguments>
+        </CallFunction>
+    </Main>
+</Script>
