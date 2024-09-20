@@ -6,8 +6,7 @@ def install_packages(packages):
             subprocess.check_call(["sudo", "apt", "install", package])
             print(f"{package} installed successfully.")
         except subprocess.CalledProcessError as e:
-            print(f"Error installing {package}:  
- {e}")
+            print(f"Error installing {package}: {e}")
 
 if __name__ == "__main__":
     packages = [
