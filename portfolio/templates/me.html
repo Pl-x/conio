@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>Allan mwangi Porforlio </title>
+  <!-- <link rel="stylesheet" href="style.css" > -->
+  <link rel="icon" href="assets/favicon.png">
+  <!-- Bootstrap 4 CSS -->
+
+
+<!-- Optional Bootstrap 4 JavaScript (if needed) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+/* Main contact section styling */
+.contact-section {
+  padding: 50px 0;
+  background-color: rgba(147, 195, 195, 0.5);
+  background-image: url(/static/img2.jpeg);
+  background-repeat: no-repeat;
+  background-size: 500vmax;
+}
+
+/* Contact info styles */
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p,
+.contact-info a {
+  font-size: 1.2rem;
+  background-image: url(/static/img4.jpeg);
+  background-color: rgba(68, 148, 151 ,0.5) ;
+  background-repeat: no-repeat;
+  background-size: 500vmax;
+  margin-bottom: 10px;
+}
+
+.contact-info i {
+  margin-right: 5px;
+}
+
+/* Contact form container */
+.contact-form-container {
+  background-color: rgba(0, 191, 255, 0.5);
+  background-image: url(/static/img3.jpeg);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  background-size: 500vmax;
+}
+
+.contact-form-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.contact-form-container .form-control {
+  border-radius: 5px;
+}
+
+.contact-form-container .btn {
+  background-color: goldenrod;
+  border: none;
+  padding: 10px 20px;
+}
+
+/* Main section padding */
+.my-works-section {
+  padding: 50px 0;
+}
+
+/* Project card container */
+.project-card {
+  background-color: rgba(43, 124, 109, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(233, 14, 14, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Project card hover effect */
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* Project details styling */
+.project-details h2 {
+  font-size: 1.8rem;
+  margin-top: 15px;
+}
+
+.project-details p {
+  font-size: 1.1rem;
+  color: burlywood;
+}
+
+.project-details .btn {
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Tech icon styling */
+.tech-icons i {
+  font-size: 1.8rem;
+  color: #090d88;
+  margin-right: 10px;
+}
+
+.tech-icons i:hover {
+  color: #007bff;
+}
+/* Header background and padding */
+.header {
+  background-color: rgba(51, 150, 153 , 0.5); /* Light background for the header */
+  padding: 20px 0;
+  background-image: url(/static/img1.jpeg);
+  background-repeat: no-repeat;
+  background-size: 500vmax;
+}
+
+/* Home content styling */
+.home-content {
+  padding: 100px 0; /* Padding for the home content */
+  color: #df0a7b; /* Text color */
+  background-image: url(/static/tyler.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300vmax;
+}
+
+/* Name section styling */
+.name h1 {
+  font-size: 2.5rem; /* Adjust font size for prominence */
+}
+
+.name p {
+  font-size: 1.2rem; /* Adjust font size for the description */
+}
+
+/* Angle down icon */
+.angle-down-icon {
+  margin-top: 20px;
+}
+
+.angle-down-icon a {
+  color: #f00893; /* Bootstrap primary color */
+  font-size: 3em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .name h1 {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .name p {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+}
+
+.about-heading,
+.skills-heading {
+  font-weight: 700; /* Bold for emphasis */
+  font-size: 2rem;  /* Larger heading size */
+  color: #ffffff; /* Ensure heading color is white */
+}
+
+.lead {
+  font-size: 1.2rem; /* Slightly larger text for the description */
+  line-height: 1.5;  /* Increase line height for readability */
+}
+
+.skills-bar .progress {
+  height: 30px; /* Customize the height of the progress bars */
+}
+
+.progress-bar {
+  font-weight: bold; /* Make the text on the progress bars bold */
+}
+
+.about-me {
+  position: relative;
+  overflow: hidden; /* Ensure no overflow from the section */
+  background-image: url(/static/img5.jpeg);
+  background-size: 100vmax;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-heading,
+.skills-heading {
+  font-weight: 700; /* Bold for emphasis */
+  font-size: 2.5rem; /* Larger heading size */
+  color: #ffffff; /* Ensure heading color is white */
+}
+
+.lead {
+  font-size: 1.2rem; /* Slightly larger text for the description */
+  line-height: 1.6;  /* Increase line height for readability */
+}
+
+/* Image Styles */
+img {
+  border: 5px solid #ffffff; /* White border around the image */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+img:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Skills Bar Styles */
+.skills-bar .progress {
+  height: 30px; /* Customize the height of the progress bars */
+}
+
+.progress-bar {
+  font-weight: bold; /* Make the text on the progress bars bold */
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Allan mwangi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/static/port.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/static/projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/static/contacts.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/static/kubied.html">Learning Resources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="home-content text-center" id="home-page">
+      <div class="name">
+        <h1>I am Allan mwangi</h1>
+        <h3>I am a university student</h3>
+      </div>
+      <div class="angle-down-icon">
+      <a href="#about" class="angle-down-icon">&#x2193;</a>
+      </div>
+    </div>
+  </header>
+
+<section class="about-me bg-dark text-light" id="about">
+    <div class="container py-5">
+        <div class="about-content row align-items-center">
+            <div class="left-content col-md-6 text-center text-md-left">
+                <h1 class="about-heading mb-4">About Me</h1>
+                <img src="/static/img2.jpeg" alt="Allan mwangi" class="img-fluid rounded-circle shadow">
+                <p class="lead mb-4">
+                    I am a student learning web programming
+                </p>
+            </div>
+
+
+
+<!-- Projects Heading -->
+      <div class="proj-heading text-center mb-5">
+        <h1>Projects</h1>
+      </div>
+
+      <!-- Projects Content -->
+
+
+        <!-- Project 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <img src="/static/img3.jpeg" class="img-fluid" alt="GrubFix project">
+            <div class="project-details text-center mt-3">
+              <div class="tech-icons mb-2">
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js"></i>
+              </div>
+              <h2>Grubfix</h2>
+              <p>This is a modern grub rescue solution</p>
+              <a href="https://github.com/Pl-x/conio.git">My Projects</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-section" id="contact">
+    <div class="container">
+      <!-- Contact Me and Form Combined -->
+      <div class="row">
+        <!-- Contact Information Section -->
+        <div class="col-md-6 contact-info text-center">
+          <h2>Contact Me</h2>
+          <p class="mail">
+            Get in touch with me <i class="fas fa-arrow-right"></i>
+            justalloh403@gmail.com
+          </p>
+          <p class="mail">
+            Phone number <i class="fas fa-arrow-right"></i>
+           0794869383
+          </p>
+
+        </div>
+  <!-- Contact Form Section -->
+  <div class="col-md-6 contact-form-container">
+    <h3 class="text-center mb-4">Send me a message</h3>
+    <form id="contact-form" action="http://localhost:3000/send-email/" method="POST">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Your Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="email">Your Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type your message here" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+    <script>
+      function getCsrfToken() {
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        return csrfToken;
+        
+      document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/send-email/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    } catch (error) {
+      alert('Error submitting the form.');
+    }
+  });
+  </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Signup</title>
+</head>
+<body style="font-family: Arial; margin: 0; padding: 0; background-image: url('/static/tyler.jpg'); color: #333;">
+  <header style="background-image: url('/static/tyler.jpg'); padding: 1em; text-align: center; color: white;">
+    <h1>Signup</h1>
+  </header>
+  <main style="padding: 2em;">
+    <form method="POST">
+      {% csrf_token %}
+      <label>Username:</label><br>
+      <input type="text" name="username" style="width: 100%; padding: 0.5em; margin: 0.5em 0;" required><br>
+      <label>Email:</label><br>
+      <input type="email" name="email" style="width: 100%; padding: 0.5em; margin: 0.5em 0;" required><br>
+      <label>Password:</label><br>
+      <input type="password" name="password" style="width: 100%; padding: 0.5em; margin: 0.5em 0;" required><br>
+      <label>Confirm Password:</label><br>
+      <input type="password" name="password2" style="width: 100%; padding: 0.5em; margin: 0.5em 0;" required><br>
+      <button type="submit" style="padding: 0.5em; background-image: url('/static/tyler.jpg'); color: white; border: none;">Signup</button>
+  </form>
+  <p>Already have an account? <a href="{% url 'signin' %}">Login here</a></p>
+  {% if messages %}
+    {% for message in messages %}
+      <p style="color: chartreuse;">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+  </main>
+</body>
+</html>
